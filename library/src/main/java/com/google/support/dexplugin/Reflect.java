@@ -87,12 +87,12 @@ import java.util.Arrays;
         Object[] original = (Object[]) jlrField.get(instance);
         Object[] combined = (Object[]) Array.newInstance(
                 original.getClass().getComponentType(), original.length + extraElements.length);
-        if (MyDex.LOG)
-            Log.d(MyDex.TAG, "expandFieldArray:original=" + original.length + ",extraElements=" + extraElements.length);
+        if (MultiEncryptDex.LOG)
+            Log.d(MultiEncryptDex.TAG, "expandFieldArray:original=" + original.length + ",extraElements=" + extraElements.length);
         System.arraycopy(original, 0, combined, 0, original.length);
         System.arraycopy(extraElements, 0, combined, original.length, extraElements.length);
         jlrField.set(instance, combined);
-        if (MyDex.LOG)
-            Log.d(MyDex.TAG, "expandFieldArray=" + Arrays.toString(combined));
+        if (MultiEncryptDex.LOG)
+            Log.d(MultiEncryptDex.TAG, "expandFieldArray=" + Arrays.toString(combined));
     }
 }

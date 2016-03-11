@@ -25,8 +25,8 @@ import java.util.List;
              */
         Field pathListField = Reflect.findField(loader, "pathList");
         Object dexPathList = pathListField.get(loader);
-        if (MyDex.LOG)
-            Log.d(MyDex.TAG, "dexPathList exist=" + (dexPathList != null));
+        if (MultiEncryptDex.LOG)
+            Log.d(MultiEncryptDex.TAG, "dexPathList exist=" + (dexPathList != null));
         Reflect.expandFieldArray(dexPathList, "dexElements", makeDexElements(dexPathList,
                 new ArrayList<File>(additionalClassPathEntries), optimizedDirectory));
     }
@@ -42,8 +42,8 @@ import java.util.List;
             NoSuchMethodException {
         Method makeDexElements =
                 Reflect.findMethod(dexPathList, "makeDexElements", ArrayList.class, File.class);
-        if (MyDex.LOG)
-            Log.d(MyDex.TAG, "makeDexElements exist=" + (makeDexElements != null));
+        if (MultiEncryptDex.LOG)
+            Log.d(MultiEncryptDex.TAG, "makeDexElements exist=" + (makeDexElements != null));
         return (Object[]) makeDexElements.invoke(dexPathList, files, optimizedDirectory);
     }
 }

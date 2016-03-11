@@ -30,3 +30,4 @@ proguard/
 .gradle/
 build/
 
+/library/src/main/obj

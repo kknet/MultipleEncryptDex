@@ -18,14 +18,14 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-public class MyDex {
+public class MultiEncryptDex {
     static final String DEX_DIR = "plugin_cache";
     static final boolean LOG = BuildConfig.DEBUG;
     static String DEX_PREFIX = "assets/classes";
     static String ZIP_PREFIX = "plugin";
     static final String DEX_SUFFIX = ".dat";
     static final int MAX_NUM = 5;
-    static final String TAG = "MyDex";
+    static final String TAG = MultiEncryptDex.class.getSimpleName();
 
     public static boolean install(Context context, String prefix, String seed) {
         ApplicationInfo applicationInfo = getApplicationInfo(context);
